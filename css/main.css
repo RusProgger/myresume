@@ -1,0 +1,464 @@
+@charset "UTF-8";
+body::-webkit-scrollbar {
+  width: 15px; /* ширина всей полосы прокрутки */
+}
+body::-webkit-scrollbar-track {
+  background: #000000; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #000000, #080808); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+body::-webkit-scrollbar-thumb {
+  background: #b66316; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #26316d, #31030c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 20px; /* округлось бегунка */
+  border: 1px solid rgb(231, 226, 216); /* отступ вокруг бегунка */
+}
+
+.scroll-block {
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.scroll-block.visible {
+  opacity: 1;
+}
+
+.loader-page {
+  background: #000 url(../images/loader/loader.webp) no-repeat;
+  background-position: center center;
+  background-size: 50%;
+  position: fixed;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 1000;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.circular-menu {
+  width: 92px;
+  position: relative;
+}
+
+.circle {
+  width: 200px;
+  height: 160px;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.4s ease-out;
+}
+
+.open.circle {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.circle a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  height: 40px;
+  width: auto;
+  line-height: 40px;
+  position: absolute;
+  text-align: center;
+  transition: 0.3s;
+  font-size: 1rem;
+  font-family: "Agbalumo", system-ui;
+  font-style: normal;
+}
+
+.circle a:hover {
+  color: rgb(216, 111, 13);
+}
+
+.circle .active {
+  color: rgb(216, 111, 13);
+}
+
+.menu-button {
+  position: absolute;
+  top: calc(50% - 30px);
+  left: calc(70% - 30px);
+  text-decoration: none;
+  text-align: center;
+  color: #444;
+  border-radius: 50%;
+  display: block;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  padding: 10px;
+  background: #dde;
+}
+
+.menu-button:hover {
+  background-color: #eef;
+}
+
+.icon {
+  font-size: 28px;
+}
+
+.home {
+  left: 65% !important;
+  top: 36% !important;
+}
+
+.project {
+  left: 104% !important;
+  top: 36% !important;
+}
+
+.about {
+  left: 155% !important;
+  top: 36% !important;
+}
+
+.contacts {
+  left: 198% !important;
+  top: 36% !important;
+}
+
+@media screen and (max-width: 768px) {
+  .icon {
+    font-size: 1rem;
+  }
+  .home {
+    left: 50% !important;
+  }
+  .project {
+    left: 84% !important;
+  }
+  .about {
+    left: 125% !important;
+  }
+  .contacts {
+    left: 160% !important;
+  }
+}
+@media screen and (max-width: 419px) {
+  .circular-menu {
+    max-width: 60px;
+  }
+  .icon {
+    font-size: 18px;
+  }
+  .home {
+    left: 37% !important;
+  }
+  .project {
+    left: 62% !important;
+  }
+  .about {
+    left: 91% !important;
+  }
+  .contacts {
+    left: 117% !important;
+  }
+}
+.main__hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 120px 15px;
+}
+.main__hero-img {
+  width: 200px;
+  height: 200px;
+  display: block;
+  border-radius: 50%;
+}
+.main__hero-title, .main__hero-desc {
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Agbalumo", system-ui;
+  color: #ffffff;
+  color: #ffffff;
+  font-family: "Agbalumo", system-ui;
+}
+.main__hero-title {
+  font-size: clamp(1.5625rem, 0.7933rem + 3.8462vw, 3.75rem);
+  font-weight: bold;
+  padding-top: 0.925rem;
+  padding-bottom: 0.925rem;
+}
+.main__hero-desc {
+  letter-spacing: 1.5px;
+  font-size: clamp(1.125rem, 0.9712rem + 0.7692vw, 1.5625rem);
+  padding-bottom: 1rem;
+}
+.main__hero-social {
+  padding-top: 0.725rem;
+  padding-bottom: 1.425rem;
+  text-align: center;
+}
+.main__hero-social img {
+  display: inline-block;
+  margin: auto;
+}
+
+@media screen and (max-width: 769px) {
+  .main__hero {
+    padding: 50px 15px;
+  }
+  .main__hero-social a img {
+    width: 45px;
+  }
+}
+.projects {
+  padding-top: 60px;
+  padding-bottom: 120px;
+  position: relative;
+}
+.projects__title {
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Agbalumo", system-ui;
+  color: #ffffff;
+  font-size: clamp(1.5625rem, 1.2328rem + 1.6484vw, 2.5rem);
+  padding: 1.275rem 0 1.275rem 0;
+}
+.projects__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-gap: 2rem;
+  justify-content: center;
+  margin: 25px 10px 10px;
+}
+.projects__cards-item {
+  height: 300px;
+  width: 100%;
+  position: relative;
+  border-radius: 8px;
+  margin: auto;
+  background-color: #272727;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  transition: 0.3s;
+}
+.projects__cards-item > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.projects__cards-item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.3s ease;
+  opacity: 0;
+  inset: 0;
+  transform: scale(0);
+  background: rgba(0, 0, 0, 0.7);
+}
+.projects__cards-item-overlay-body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+}
+.projects__cards-item-overlay-body > a {
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: block;
+}
+.projects__cards-item:hover > .projects__cards-item-overlay {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media screen and (max-width: 870px) {
+  .projects {
+    padding-bottom: 50px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .projects__cards {
+    grid-template-columns: repeat(2, minmax(230px, 310px));
+  }
+}
+@media screen and (max-width: 580px) {
+  .projects__cards {
+    grid-template-columns: repeat(auto-fit, 290px);
+  }
+}
+.about-me__title {
+  font-size: clamp(1.5625rem, 1.2328rem + 1.6484vw, 2.5rem);
+  padding: 1.275rem 0 1.275rem 0;
+}
+.about-me__body {
+  margin-top: 55px;
+  margin-bottom: 55px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.about-me__body-photo {
+  max-width: 50%;
+}
+.about-me__body-photo img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+.about-me__body-skills {
+  max-width: 50%;
+  flex-grow: 1;
+  padding: 25px 0;
+}
+.about-me__body-skills-text {
+  font-family: "Agbalumo", system-ui;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  text-align: center;
+}
+.about-me__skill-title {
+  font-size: clamp(1.5rem, 1.3242rem + 0.8791vw, 2rem);
+  padding-bottom: 10px;
+  letter-spacing: initial;
+}
+.about-me__skill-title, .about-me__skill-text {
+  font-family: "Agbalumo", system-ui;
+}
+.about-me__skill-title, .about-me__skill-text, .about-me__skill {
+  text-align: center;
+  color: #ffffff;
+}
+.about-me__skill {
+  padding-top: 35px;
+  padding-bottom: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 1.3rem;
+  font-family: "Agbalumo", system-ui;
+}
+.about-me__skill strong {
+  background: #4b1717;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.progress-container {
+  margin: 10px 0;
+}
+.progress-container > progress {
+  width: 100%;
+}
+
+.progress-container > label {
+  display: block;
+  font-family: "Agbalumo", system-ui;
+  color: #ffffff;
+  padding: 10px 5px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 920px) {
+  .progress-container {
+    margin: 5px 0;
+  }
+  .about-me__body-skills {
+    padding: 10px 0;
+  }
+}
+@media screen and (max-width: 870px) {
+  .about-me__body {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 358px) {
+  .about-me__skill > strong {
+    padding: 5px;
+    font-size: 1.1rem;
+  }
+}
+@media screen and (max-width: 358px) {
+  .about-me__skill-title {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+}
+.footer {
+  padding: 25px 0;
+  background-color: #081c20;
+}
+.footer__body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer__contact-me {
+  text-align: center;
+}
+.footer-contact-me__title {
+  text-align: center;
+  font-family: "Agbalumo", system-ui;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding-bottom: 25px;
+  font-size: clamp(1.5rem, 1.3242rem + 0.8791vw, 2rem);
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.2;
+  text-rendering: optimizeSpeed;
+  color: #2c2c2c;
+  background-color: #192224;
+  cursor: url("../assets/cursors/cursor.png"), default;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  font-size: 0;
+}
+
+svg {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.title {
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Agbalumo", system-ui;
+  color: #ffffff;
+}/*# sourceMappingURL=main.css.map */

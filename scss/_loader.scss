@@ -1,0 +1,9 @@
+.loader-page {
+    background: #000 url(../images/loader/loader.webp) no-repeat;
+    background-position: center center;
+    background-size: 50%; 
+    position: fixed;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 1000;
+}

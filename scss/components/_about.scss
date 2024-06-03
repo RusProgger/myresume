@@ -1,0 +1,134 @@
+.about-me {
+    &__title {
+        // @include colorText;
+        font-size: clamp(1.5625rem, 1.2328rem + 1.6484vw, 2.5rem);
+        padding: 1.275rem 0 1.275rem 0;
+    }
+
+    &__body {
+        margin-top: 55px;
+        margin-bottom: 55px;
+        padding-left: 10px;
+        padding-right: 10px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        &-photo {
+            max-width: 50%;
+
+            & img {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+    
+        }
+
+        &-skills {
+            max-width: 50%;
+            flex-grow: 1;
+            // border: 1px solid red;
+            padding: 25px 0;
+
+            &-text {
+                @include fontFamilyAg;
+                padding-top: 20px;
+                padding-bottom: 10px;
+                letter-spacing: 1.5px;
+                color: $textTitleColor;
+                text-align: center;
+            }
+        }
+    }
+
+    // skills 
+
+
+    // title 
+    &__skill-title {
+        font-size: clamp(1.5rem, 1.3242rem + 0.8791vw, 2rem);
+        padding-bottom: 10px;
+        letter-spacing: initial;
+        // font-weight: 700;
+    }
+
+    
+    &__skill-title,
+    &__skill-text {
+        @include fontFamilyAg;
+    }
+
+    &__skill-title,
+    &__skill-text,
+    &__skill {
+        // @include colorText;
+        // letter-spacing: 1.5px;
+        // line-height: 1.6;
+        text-align: center;
+        color: $textTitleColor;
+    }
+
+    
+
+    &__skill {
+        padding-top: 35px;
+        padding-bottom: 25px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 1.3rem;
+        @include fontFamilyAg;
+
+        & strong {
+            background: #4b1717;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    }
+}
+
+.progress-container {
+    margin: 10px 0;
+
+    & > progress {
+        width: 100%;
+    }
+}
+
+.progress-container > label {
+    display: block;
+    @include fontFamilyAg;
+    color: $textTitleColor;
+    padding: 10px 5px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 920px) {
+    .progress-container {
+        margin: 5px 0;
+    }
+
+    .about-me__body-skills {
+        padding: 10px 0;
+    }
+}
+
+@media screen and (max-width: 870px) {
+    .about-me__body {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 358px) {
+    .about-me__skill > strong {
+        padding: 5px;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 358px) {
+    .about-me__skill-title {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+}

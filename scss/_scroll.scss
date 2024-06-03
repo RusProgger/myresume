@@ -1,0 +1,29 @@
+body::-webkit-scrollbar {
+    width: 15px;               /* ширина всей полосы прокрутки */
+
+    &-track {
+        background: #000000;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to left, #1d1d1d, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #000000, #080808); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+    &-thumb {
+        background: #b66316;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #26316d, #31030c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        border-radius: 20px;       /* округлось бегунка */
+        border: 1px solid rgb(231, 226, 216);  /* отступ вокруг бегунка */
+    }
+}
+
+// scroll 
+
+.scroll-block {
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.scroll-block.visible {
+    opacity: 1;
+}
+

@@ -1,0 +1,11 @@
+@mixin colorText {
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: "Agbalumo", system-ui;
+    color: $textTitleColor;
+}
+
+@mixin fontFamilyAg {
+    font-family: "Agbalumo", system-ui;
+}

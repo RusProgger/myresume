@@ -25,7 +25,7 @@ body::-webkit-scrollbar-thumb {
 .loader-page {
   background: #000 url(../images/loader/loader.webp) no-repeat;
   background-position: center center;
-  background-size: 50%;
+  background-size: 15%;
   position: fixed;
   width: 100%;
   min-height: 100vh;
@@ -36,6 +36,34 @@ body::-webkit-scrollbar-thumb {
   max-width: 1200px;
   margin: auto;
   padding: 0 15px;
+}
+
+.main__hero-social__button {
+  width: 250px;
+  display: inline-block;
+  outline: none;
+  border: 1px solid #bef264;
+  background: transparent;
+  padding: 15px 0;
+  margin-bottom: 15px;
+  font-weight: 500;
+  font-family: "Agbalumo", system-ui;
+  transition: 0.3s;
+  color: #000;
+}
+.main__hero-social__button-elw {
+  background: #bef264;
+}
+.main__hero-social__button:hover {
+  background: #192224;
+  color: #ffffff;
+}
+
+.fa-brands,
+.fa-regular {
+  font-size: 25px;
+  padding-right: 10px;
+  vertical-align: middle;
 }
 
 .circular-menu {
@@ -191,17 +219,14 @@ body::-webkit-scrollbar-thumb {
 }
 .main__hero-desc {
   letter-spacing: 1.5px;
-  font-size: clamp(1.125rem, 0.9712rem + 0.7692vw, 1.5625rem);
+  line-height: 1.7;
   padding-bottom: 1rem;
+  font-weight: normal;
 }
 .main__hero-social {
   padding-top: 0.725rem;
   padding-bottom: 1.425rem;
   text-align: center;
-}
-.main__hero-social img {
-  display: inline-block;
-  margin: auto;
 }
 
 @media screen and (max-width: 769px) {
@@ -332,6 +357,7 @@ body::-webkit-scrollbar-thumb {
   letter-spacing: 1.5px;
   color: #ffffff;
   text-align: center;
+  line-height: 1.6;
 }
 .about-me__skill-title {
   font-size: clamp(1.5rem, 1.3242rem + 0.8791vw, 2rem);
@@ -400,27 +426,97 @@ body::-webkit-scrollbar-thumb {
     line-height: 1.5;
   }
 }
-.footer {
-  padding: 25px 0;
-  background-color: #081c20;
+.professional__title {
+  font-size: clamp(1.5625rem, 1.2328rem + 1.6484vw, 2.5rem);
+  padding: 1.275rem 0 1.275rem 0;
 }
-.footer__body {
+.professional__body {
+  margin: 100px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 10px;
 }
-.footer__contact-me {
+.professional__body-card {
+  width: calc(50% - 20px);
+  border: 1px solid #bef264;
+  border-radius: 5px;
+  font-weight: bold;
   text-align: center;
 }
-.footer-contact-me__title {
+.professional__body-content-title {
+  padding: 20px 0;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
   text-align: center;
   font-family: "Agbalumo", system-ui;
   color: #ffffff;
-  text-transform: uppercase;
-  padding-bottom: 25px;
-  font-size: clamp(1.5rem, 1.3242rem + 0.8791vw, 2rem);
+  font-size: clamp(1rem, 0.8681rem + 0.6593vw, 1.375rem);
+}
+.professional__body-content-desc {
+  padding: 20px 15px;
+  line-height: 1.6;
+}
+.professional__body-content-desc, .professional__body-content-period {
+  font-family: "Agbalumo", system-ui;
+  color: #ffffff;
+}
+.professional__body-content-period {
+  padding: 15px 5px;
 }
 
+@media screen and (max-width: 654px) {
+  .professional__body {
+    margin: 50px 0;
+  }
+  .professional__body-card {
+    width: 100%;
+  }
+}
+.footer {
+  background-color: #081c20;
+  min-height: 10vh;
+}
+.footer__body {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  min-height: inherit;
+  padding: 0 15px;
+}
+.footer__body-social > a {
+  width: 125px;
+  margin-bottom: 0;
+  background: transparent;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  padding: 5px 10px;
+}
+.footer__text {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: "Agbalumo", system-ui;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 769px) {
+  .footer__body {
+    flex-direction: column;
+  }
+  .footer__text {
+    text-align: center;
+    padding: 15px 0;
+  }
+  .footer__body-social {
+    margin: auto;
+  }
+  .footer__body-social > a {
+    margin-bottom: 10px;
+    display: block;
+  }
+}
 html {
   font-size: 16px;
 }
@@ -439,6 +535,7 @@ body {
 
 a {
   text-decoration: none;
+  color: #ffffff;
 }
 
 img {

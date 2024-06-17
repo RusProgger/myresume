@@ -1,0 +1,30 @@
+.main__hero-social__button {
+    width: 250px;
+    display: inline-block;
+    outline: none;
+    border: 1px solid $buttonColor;
+    background: transparent;
+    padding: 15px 0;
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-family: "Agbalumo", system-ui;
+    transition: 0.3s;
+    color: #000;
+
+    &-elw {
+        background: $buttonColor;
+    }
+
+    &:hover {
+        background: $bgColor;
+        color: $textTitleColor;
+    }
+
+}
+
+.fa-brands,
+.fa-regular {
+    font-size: 25px;
+    padding-right: 10px;
+    vertical-align: middle;
+}
